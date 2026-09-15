@@ -66,7 +66,7 @@ def local_cost(k, l, i, j, q0, q1, I):
 def L2_metric(q0, q1, I0, I1):
     if array_equal(I0, I1):
         return sqrt(sum(
-            (I0[k+1]-I0[k])*(norm(q0[k]-q1[k])**2) for k in xrange(I0.shape[0]-1)
+            (I0[k+1]-I0[k])*(norm(q0[k]-q1[k])**2) for k in range(I0.shape[0]-1) #NEWFIX: xrange -> range for python3 compatibility
         ))
 
     #create array of shared interpolation points
@@ -75,7 +75,7 @@ def L2_metric(q0, q1, I0, I1):
     l2_sum = 0.0
 
     #interpolate to previous when creating diff
-    for k in xrange(I.shape[0]-1):
+    for k in range(I.shape[0]-1): #NEWFIX: xrange -> range for python3 compatibility
         l2_sum += (I[k+1] - I[k]) * (norm(q0[i] - q1[j])**2)
 
         if I0[i+1] <= I[k+1]:

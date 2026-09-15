@@ -1,7 +1,7 @@
 from numpy import array, isnan, zeros, eye, trace, dot
 from numpy import sin, cos, arccos, sqrt
 from numpy.linalg import norm
-from .helpers import TOL, norm
+from .helpers import TOL, norm, is_3x3_matrix
 
 """ Useful transformations in S03."""
 #SO3 basis

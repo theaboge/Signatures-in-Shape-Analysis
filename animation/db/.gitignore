@@ -1,5 +1,9 @@
 subject_files
 subject_files/*
 
+#NEWFIX
+subjects
+subjects/*like this
+
 mocap.db
 db_config.py

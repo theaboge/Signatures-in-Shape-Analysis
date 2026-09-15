@@ -15,6 +15,12 @@ def norm(r):
         return sqrt(0.5*trace(dot(r,r.T)))
     return np_norm(r, ord=2)
 
+#NEWFIX: Added function to check if the last two dimensions of q hold 3x3 matrices (so3 elements) rather than already-flattened 3-vectors
+#true if the last two dimensions of q hold 3x3 matrices (so3 elements)
+#rather than already-flattened 3-vectors
+def is_3x3_matrix(q):
+    return q.shape[-2:] == (3, 3)
+
 
 #crop curve
 def crop_curve(c, start=0, step=1, stop = None):

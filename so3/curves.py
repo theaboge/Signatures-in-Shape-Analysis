@@ -1,3 +1,4 @@
+# Imports
 from numpy import linspace, array, dot, zeros, array_equal, flip
 from numpy import sqrt, sum, unique, concatenate as np_concatenate
 from .dynamic_distance import find_optimal_diffeomorphism
@@ -22,8 +23,10 @@ def distance(c0, c1, I0=None, I1=None):
 
 
 def reparameterize_to_optimal(c0, c1, depth = 5):
-    '''Uses DP algorithm to find an optimal alignment from c1 to c0 and
-    returns a corresponding reparametrization of c1.'''
+    '''
+    Uses DP algorithm to find an optimal alignment from c1 to c0 and
+    returns a corresponding reparametrization of c1
+    '''
     is_multi = len(c0.shape) == 4
     I0 = linspace(0,1, c0.shape[1 if is_multi else 0])
     I1 = linspace(0,1, c1.shape[1 if is_multi else 0])
@@ -39,8 +42,14 @@ def reparameterize_to_optimal(c0, c1, depth = 5):
 #to find their optimal representative in S. Assumes that both curves have
 #the same parameterization
 def dynamic_distance(c0, c1, depth = 5):
-    '''Uses DP algorithm to find an optimal alignment from c1 to c0 and
-    returns a corresponding reparametrization of c1.'''
+    '''
+    Uses DP algorithm to find an optimal alignment from c1 to c0 and
+    returns a corresponding reparametrization of c1
+
+    Combines the DP search with the distance evaluation
+
+    Equation (4): dS := inf_φ dP(c0, c1∘φ)
+    '''
     is_multi = len(c0.shape) == 4
     I0 = linspace(0,1, c0.shape[1 if is_multi else 0])
     I1 = linspace(0,1, c1.shape[1 if is_multi else 0])
@@ -144,6 +153,10 @@ def L2_metric(q0, q1, I0, I1):
 # Ensures that the curve is in the format expected by the iisignature package.
 # Assume x(0) = 0, the signature is translation invariant
 def lift_piece_wise_constant(q, I):
+    """
+    Constructs exactly the piecewise linear path whose signature hass the closed form in eq. (9).
+    The actual tensorexponential computation is delegaded to iisignature
+    """
     x = zeros(q.shape)
 
     for i in range(q.shape[1]-1):

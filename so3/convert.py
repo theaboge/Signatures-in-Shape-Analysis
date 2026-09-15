@@ -1,6 +1,15 @@
 import pylab as pl
 import sys
 
+"""
+Data → curves in SO(3)^d (convert.py)
+
+animation_to_SO3 walks a parsed CMU mocap animation (via animation/src/ and animation/db/, 
+which parse .asf/.amc files and store subject/animation metadata in SQLite) and converts each 
+joint's Euler angles into a rotation matrix, producing a curve c : frames → SO(3)^d. 
+This is the discretized version of the paper's parametrized curve c ∈ C^∞([0,1], G) with G = SO(3)^d (§2.1, §4)
+"""
+
 def Rx(a):
     s, c = pl.sin(a), pl.cos(a)
     return pl.array( [[1, 0, 0, 0], [0, c, -s, 0], [0, s, c, 0], [0, 0, 0, 1]] )
@@ -19,6 +28,10 @@ def T(t):
     return M
 
 def convert_to_SO3(skeleton, frame, filter_noisy_channels=False):
+    """
+    Builds the discretized curve c:frames->SO(3)^d, i.e. a representative of C^inf([0,1],G) wih G=SO(3)^d
+    Equation (2): S = C^inf([0,1],G) / Diff
+    """
     def convert(node):
         if node is 'root':
             transf = [pl.deg2rad(x) for x in frame['root']]
@@ -47,6 +60,10 @@ def convert_to_SO3(skeleton, frame, filter_noisy_channels=False):
     return { key: convert(key) for key in ['root'] + list(skeleton.bones.keys()) }
 
 def animation_to_SO3(skeleton, animation):
+    """
+    Modeling frames SO(3)^d
+    """
+
     # Get rotation matrices for all joints and all frames
     bone_names = ['root'] + list(skeleton.bones.keys())
 

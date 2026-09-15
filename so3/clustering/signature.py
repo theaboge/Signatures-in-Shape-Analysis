@@ -30,22 +30,25 @@ d = 69
 words, word_index = signature.get_words(d, k)
 s = prepare(d,k)
 
+#d_sig(c0,c1) = || log(S(c0))/||log(S(c0))|| - log(S(c1))/||log(S(c1))|| ||
 def similarity(a,b):
-    return log_signature.concatenate_metric(a,b,s)
-    return log_signature.linear_metric(a,b)
-    return signature.inverse_tensor_metric(a,b, words, word_index, k, d)
-    return signature.linear_metric(a,b)
-    return signature.concatenate_group_metric(a,b,words, word_index, k, d)
-    return signature.concatenate_algebra_metric(a,b,words, word_index, k, d)
-    return log_signature.concatenate_group_metric(a,b,s)
+#     return log_signature.concatenate_metric(a,b,s)
+#    return log_signature.linear_metric(a,b)
+#    return signature.inverse_tensor_metric(a,b, words, word_index, k, d)
+#    return signature.linear_metric(a,b)
+#    return signature.concatenate_group_metric(a,b,words, word_index, k, d)
+#    return signature.concatenate_algebra_metric(a,b,words, word_index, k, d)
+#    return log_signature.concatenate_group_metric(a,b,s)
+    return log_signature.normalized_linear_distance(a,b) #NEWFIX
 
 def explore(id):
     subject , animation, description = unpack(fetch_animations(1, animation_id = id))
     curve_full = animation_to_SO3(subject, animation)
     curve = crop_curve_based_on_id(curve_full, id)
-    return curve
-    return log_signature.curve_log_signature(curve, s)
-    return signature.curve_signature(curve, k)
+#   return curve
+    return log_signature.curve_log_signature(curve, s) #NEWFIX: use only this return, not the other two commented out returns, since we want to use the log signature for the similarity measure. 
+                                                       #        The other two return statements are kept for reference in case we want to switch back to using the signature or the curve itself.
+#   return signature.curve_signature(curve, k)    
 
 
 def worker(i,j):
