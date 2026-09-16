@@ -5,7 +5,7 @@
 **Fork of [paalel/Signatures-in-Shape-Analysis](https://github.com/paalel/Signatures-in-Shape-Analysis).**
 This fork exists to get the original codebase running on a modern Python
 (verified on 3.14) and to reproduce the paper's Figure 1 on real CMU
-motion-capture data. It had not been run since 2019, and two bugs crashed it
+motion-capture data. Two bugs crashed it
 immediately on Python 3:
 
 - `so3/dynamic_distance.py`: `xrange` &rarr; `range` (removed in Python 3)
