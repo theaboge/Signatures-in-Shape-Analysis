@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 # High-level interface for fetching animations by id, filename, or description.
 # Wraps the database layer and the .asf/.amc parsers into simple functions used by
 # every clustering script.

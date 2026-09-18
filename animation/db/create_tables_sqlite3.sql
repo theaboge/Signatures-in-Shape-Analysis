@@ -1,7 +1,7 @@
 -- Creates the subject, animation, and similarity tables that hold all mocap
 -- metadata and computed distances.
 
-CREATE TABLE IF NOT EXISTS subject
+CREATE TABLE IF NOT EXISTS subject 
 (
  subject_id INTEGER PRIMARY KEY AUTOINCREMENT,
  file_name VARCHAR (50) NOT NULL,
