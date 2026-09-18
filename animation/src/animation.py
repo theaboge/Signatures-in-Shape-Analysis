@@ -1,3 +1,6 @@
+# The Animation class — holds a sequence of parsed motion frames and basic
+# operations on them (move_root_to_origin, crop, step through frames).
+
 from pylab import *
 
 class Animation(object):

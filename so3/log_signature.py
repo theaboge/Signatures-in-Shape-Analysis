@@ -1,3 +1,6 @@
+# Computes the log-signature and the paper's d_sig distance — the fast metric
+# that reproduces Figure 1.
+
 from numpy import insert, zeros, sqrt, linspace,array,flip
 from numpy import concatenate as np_concatenate, dot
 from numpy.linalg import norm as np_norm

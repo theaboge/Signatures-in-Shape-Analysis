@@ -1,3 +1,8 @@
+# Computes the signature-based distance (Figure 1) and saves it to the
+# database — but only works if similarity.py has already populated the rows
+# first. Fixed a wrong-metric bug here; plot_dsig.py is the practical way to
+# get this result without the database dependency.
+
 import sys
 sys.path.append("../../")
 from animation import fetch_animations, unpack

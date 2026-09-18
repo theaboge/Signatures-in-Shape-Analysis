@@ -1,3 +1,6 @@
+# 3D playback of a single animation using mayavi. Only used by
+# display_animation.py — not part of the distance/clustering analysis.
+
 import mayavi.mlab as mlab
 import pylab as pl
 import traceback, sys

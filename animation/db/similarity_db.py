@@ -1,4 +1,7 @@
 #!/usr/bin/python
+# Writes computed distances into the similarity table. Fixed here: the INSERT
+# statement was missing the signature_distance column, which silently broke
+# every save until corrected.
 from .db_helpers import set_up
 import os, sys
 
@@ -28,8 +31,8 @@ def insert_similarity(animation_id1, animation_id2, distance, dp_distance, size1
         cursor.execute("""
             INSERT INTO
             similarity(animation_id1, animation_id2,
-            distance, dp_distance, size1, size2)
-            VALUES (?, ?, ?, ?, ?, ?);
+            distance, dp_distance, signature_distance, size1, size2)
+            VALUES (?, ?, ?, ?, 0.0, ?, ?);
             """, (animation_id1, animation_id2, distance, dp_distance, size1, size2)
         )
 

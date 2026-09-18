@@ -1,4 +1,6 @@
 
+# One function, set_up(), that opens a connection to the SQLite database.
+# Used by every other file in this folder.
 def set_up():
     try:
         from .db_config import FULL_PATH_DB

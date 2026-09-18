@@ -1,3 +1,4 @@
+# Empty package marker — makes animation/db importable as animation.db.
 from .select_from_db import *
 from .similarity_db import *
 from .db_config import *

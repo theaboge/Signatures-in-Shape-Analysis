@@ -1,3 +1,6 @@
+# The Skeleton and Bone classes — bone hierarchy, bone lengths, and the math
+# that turns joint angles into 3D coordinates for a given frame.
+
 import pylab as pl
 from collections import defaultdict
 from .animation import *

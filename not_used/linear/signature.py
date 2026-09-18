@@ -3,7 +3,7 @@ from numpy.linalg import norm as np_norm
 from iisignature import sig, prepare, logsig
 from itertools import product
 from math import factorial, pow
-from transformations import right_log
+from not_used.linear.transformations import right_log
 
 """Signature stuff."""
 def signature(path, k):

@@ -1,3 +1,6 @@
+# The core Lie-group toolbox: log/exp maps, the SRVT transform, and geodesic
+# interpolation in SO(3).
+
 from numpy import array, isnan, zeros, eye, trace, dot
 from numpy import sin, cos, arccos, sqrt
 from numpy.linalg import norm

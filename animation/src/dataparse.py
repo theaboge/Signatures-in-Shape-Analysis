@@ -1,3 +1,6 @@
+# Parses raw .amc (motion) and .asf (skeleton) files into Animation and
+# Skeleton objects. The actual mocap file-format reader.
+
 from .animation import Animation
 from .skeleton import Skeleton, Bone
 

@@ -1,3 +1,6 @@
+# The dynamic-programming algorithm that searches for the optimal time-alignment
+# between two curves — the expensive part of the paper's established baseline method.
+
 from numpy import zeros, inf, array, interp, sqrt, concatenate, linspace,array_equal, unique, where
 from numpy.linalg import norm
 from functools import partial

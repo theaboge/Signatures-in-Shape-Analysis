@@ -1,4 +1,6 @@
 #NEWFIX
+# Defines which animations (by database id) are compared, and any per-animation
+# frame-cropping. Updated to match our own rebuilt database (subject 16, ids 1-18).
 import so3.helpers as hp
 
 def crop_curve_based_on_id(curve, id):

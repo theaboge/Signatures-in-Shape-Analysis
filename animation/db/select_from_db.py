@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# Read-only queries: fetches subjects, animations, and animation id sets from
+# the database by id, filename, or description.
 from .db_helpers import set_up
 import os, sys
 

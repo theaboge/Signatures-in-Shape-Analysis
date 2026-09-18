@@ -1,3 +1,6 @@
+# Walks the downloaded mocap folder, inserts every subject/animation file into
+# the database, and downloads each subject's trial descriptions from mocap.cs.cmu.edu.
+
 from db_helpers import set_up
 from db_config import ANIMATION_FILE_DIR
 

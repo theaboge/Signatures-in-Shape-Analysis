@@ -1,6 +1,10 @@
 import pylab as pl
 import sys
 
+# Converts a parsed skeleton + animation into a curve in SO(3)^d — one rotation
+# matrix per joint per frame. The entry point from raw mocap data into the
+# mathematical framework.
+
 """
 Data → curves in SO(3)^d (convert.py)
 

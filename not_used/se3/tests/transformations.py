@@ -1,6 +1,6 @@
 import sys
 sys.path.append("../../")
-from se3.transformations import *
+from not_used.se3.transformations import *
 from so3.transformations import Ry, Rx, Rz
 
 import matplotlib.pyplot as plt

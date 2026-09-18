@@ -3,7 +3,7 @@ subject_files/*
 
 #NEWFIX
 subjects
-subjects/*like this
+subjects/*
 
 mocap.db
 db_config.py

@@ -1,4 +1,5 @@
-#NEWFIX: plot_dsig.py: compute pairwise d_sig distances between animations, then cluster via classical MDS and plot the result
+#NEWFIX: plot_dsig.py: computes each animation's log-signature once (the explore step), computes all pairwise d_sig distances directly in memory (no database), 
+#        runs classical MDS (same math R's cmdscale uses, just via numpy instead), and saves a plot — all self-contained.
 
 import sys, time
 sys.path.append("../../")

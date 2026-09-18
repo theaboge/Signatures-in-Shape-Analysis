@@ -1,26 +1,11 @@
 # Signatures in Shape analysis: An Efficient Approach to Motion Identification
 
-This repository contains the framework used for the master thesis with the same
-title. This project will also be [published in the conference
-proceedings for the GSI 2019 conferencce](https://arxiv.org/abs/1906.06406).
-
-The work is done is a collaboration with
-[Professor Elena Celledoni](https://www.ntnu.edu/employees/elena.celledoni)
- and 
-[Dr. Nikolas Tapia](http://www.wias-berlin.de/people/tapia/).
-
-
-This implementation is a continuation of work done by 
-[Markus Eslitzbichler](https://www.researchgate.net/scientific-contributions/2048343863_Markus_Eslitzbichler)
-while working as a PHD candidate at the Department of Mathematical Sciences, NTNU. 
-
 ## Notice: fork for Python 3
 
 **Fork of [paalel/Signatures-in-Shape-Analysis](https://github.com/paalel/Signatures-in-Shape-Analysis).**
 This fork exists to get the original codebase running on a modern Python
 (verified on 3.14) and to reproduce the paper's Figure 1 on real CMU
-motion-capture data. It had not been run since 2019, and two bugs crashed it
-immediately on Python 3:
+motion-capture data. Two bugs crashed it immediately on Python 3:
 
 - `so3/dynamic_distance.py`: `xrange` &rarr; `range` (removed in Python 3)
 - `so3/helpers.py` / `so3/transformations.py`: `is_3x3_matrix()` was called

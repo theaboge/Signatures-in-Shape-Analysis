@@ -1,3 +1,6 @@
+# Computes the path signature (via the iisignature library) and group-based
+# distance metrics on it — the paper's Definition 3.1 in code.
+
 from numpy import insert, zeros, sqrt, linspace, array, flip
 from numpy import concatenate as np_concatenate, dot
 from numpy.linalg import norm as np_norm

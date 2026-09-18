@@ -1,3 +1,7 @@
+# Runs the slow SRVT + dynamic-programming baseline over every pair of
+# animations (Figures 2 & 3). Fixed here: a missing multiprocessing
+# `if __name__ == "__main__":` guard that crashed on macOS.
+
 import sys
 sys.path.append("../../")
 from animation import fetch_animations, unpack
@@ -54,10 +58,11 @@ for i in range(size):
     explored[id] = explore(id)
     print("explored: %d. seconds elapsed: %.2fs." % (i,time.time() - start_time))
 
-pool = mp.Pool(processes = processes)
-for i in range(size):
-    for j in range(i, size):
-        pool.apply_async(worker, args=(i,j))
+if __name__ == "__main__":
+    pool = mp.Pool(processes = processes)
+    for i in range(size):
+        for j in range(i, size):
+            pool.apply_async(worker, args=(i,j))
 
-pool.close()
-pool.join()
+    pool.close()
+    pool.join()

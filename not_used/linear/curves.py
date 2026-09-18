@@ -1,7 +1,7 @@
 from numpy import linspace, array, zeros, array_equal, sqrt, sum, unique, concatenate
 from numpy.linalg import norm
-from dynamic_distance import find_optimal_diffeomorphism
-from  transformations import SRVT, inverse_SRVT
+from not_used.linear.dynamic_distance import find_optimal_diffeomorphism
+from  not_used.linear.transformations import SRVT, inverse_SRVT
 from iisignature import sig
 
 

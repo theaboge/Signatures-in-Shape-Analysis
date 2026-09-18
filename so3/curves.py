@@ -1,3 +1,7 @@
+# Operations on whole curves: the SRVT-only distance, the DP-optimized
+# distance, interpolation, and the piecewise-linear lift used to prepare
+# paths for signature computation.
+
 # Imports
 from numpy import linspace, array, dot, zeros, array_equal, flip
 from numpy import sqrt, sum, unique, concatenate as np_concatenate

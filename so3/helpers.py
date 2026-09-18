@@ -1,3 +1,6 @@
+# Small utilities: norms, curve cropping, and is_3x3_matrix (added here — it
+# was called elsewhere in the codebase but never defined in the original code).
+
 from numpy import stack, interp as np_interp, array, sqrt, trace, dot
 from numpy.linalg import norm as np_norm
 

@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+# High-level interface for fetching animations by id, filename, or description.
+# Wraps the database layer and the .asf/.amc parsers into simple functions used by
+# every clustering script.
+
 from .src.dataparse import parse_asf, parse_amc
 from .db.select_from_db import get_animation, get_subject, get_animation_id_set
 from .db.similarity_db import check_animation_id, insert_similarity, insert_signature_distance
