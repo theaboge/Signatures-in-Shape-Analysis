@@ -105,5 +105,5 @@ ax.set_title(
 ax.legend(loc="upper right", frameon=False, fontsize=10, labelcolor=TEXT_PRIMARY, handletextpad=0.6)
 
 fig.tight_layout()
-fig.savefig('dsig_mds_plot.png', dpi=170, facecolor=SURFACE)
-print("Saved dsig_mds_plot.png")
+fig.savefig('dsig_mds_plot_k3.png', dpi=170, facecolor=SURFACE)
+print("Saved dsig_mds_plot_k3.png")
