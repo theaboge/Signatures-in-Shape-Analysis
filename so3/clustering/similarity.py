@@ -20,7 +20,7 @@ import time
 start_time = time.time()
 max_frames = 420
 min_frames = 130
-depth = 8
+depth = 9   # thesis (Sec. 6.4, Fig. 6.3b) states D=9; the repo originally had 8
 processes = 8
 
 id_set = get_id_set()

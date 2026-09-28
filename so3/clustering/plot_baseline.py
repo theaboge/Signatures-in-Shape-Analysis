@@ -16,7 +16,9 @@ cur = conn.cursor()
 
 cur.execute("SELECT animation_id, description FROM animation ORDER BY animation_id;")
 descriptions = dict(cur.fetchall())
-id_set = sorted(descriptions.keys())
+# only animations that actually have rows in the similarity table
+cur.execute("SELECT DISTINCT animation_id1 FROM similarity;")
+id_set = sorted(r[0] for r in cur.fetchall())
 n = len(id_set)
 idx = {aid: i for i, aid in enumerate(id_set)}
 
